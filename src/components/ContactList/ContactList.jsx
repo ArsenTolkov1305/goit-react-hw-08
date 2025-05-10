@@ -1,18 +1,18 @@
 import { useSelector } from "react-redux";
-import { selectFilter } from "../../redux/filtersSlice";
-import { selectContacts } from "../../redux/contactsSlice";
-import Contact from "../Contact/Contact";
+import { selectNameFilter } from "../../redux/filters/selectors";
+import { selectContacts } from "../../redux/contacts/selectors";
+import { Contact } from "../Contact/Contact";
 import css from "./ContactList.module.css";
 
-export default function ContactList() {
+export const ContactList = () => {
   const contacts = useSelector(selectContacts);
-  const filter = useSelector(selectFilter);
+  const filter = useSelector(selectNameFilter);
 
   const filteredContacts = contacts.filter(
     (contact) =>
       contact &&
       contact.name &&
-      contact.name.toLowerCase().includes(filter.toLowerCase()),
+      contact.name.toLowerCase().includes(filter.toLowerCase())
   );
 
   return (
@@ -31,4 +31,4 @@ export default function ContactList() {
       )}
     </div>
   );
-}
+};

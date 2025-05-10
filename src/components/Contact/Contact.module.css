@@ -1,22 +1,22 @@
-.contact {
+.item {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 12px;
   background-color: white;
-  padding: 10px 15px;
   border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .info {
   display: flex;
   flex-direction: column;
+  gap: 4px;
 }
 
 .name {
-  font-weight: bold;
-  margin-bottom: 3px;
-  color: black;
+  font-weight: 500;
+  color: #333;
 }
 
 .number {
@@ -24,12 +24,15 @@
 }
 
 .button {
+  padding: 8px 16px;
   background-color: #f44336;
   color: white;
   border: none;
-  padding: 5px 10px;
   border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .button:hover {
